@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Events</title>
+<style>
+    #box
+    {
+        width: 200px;
+        height: 200px;
+        background-color: darkblue;
+    }
+</style>
+<script>
+    window.onload=function()
+    {
+     document.getElementById('box').addEventListener('click', boxClicked, false);
+     document.getElementById('box').addEventListener(
+     'mousedown', boxMouseDown, false);
+    document.getElementById('box').addEventListener('mouseover', boxMouseOver, false);
+    }
+    function boxMouseOver(event)
+    {
+        document.getElementById('result').innerHTML="<h2>Mouse Over</h2>";
+    }
+    
+    function boxMouseDown(event)
+    {
+        document.getElementById('result').innerHTML="<h2>Mouse Down</h2>";
+    }
+    
+    function boxClicked(event)
+    {
+        console.log(event);
+        document.getElementById('result').innerHTML="<h2>Click</h2>";
+        if(event.ctrlKey == true)
+            {
+                document.getElementById('box').style.display= "none";
+            }
+    }
+</script>
+</head>
+<body>
+    <div id="box"></div>
+    <div id="result"></div>
+</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Audio</title>
+    <script>
+        var player;
+        
+        window.onload=function()
+        {
+            player = document.getElementById('player');
+            player.src = "prelude.mp3";
+            document.getElementById('btnPlay').addEventListener('click', playMusic, false);
+            document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
+            document.getElementById('btnStop').addEventListener('click', stopMusic, false);
+            document.getElementById('volumeSlider').addEventListener('input', changeVolume, false);
+        }
+        
+        function changeVolume(e)
+        {
+            player.volume = document.getElementById('volumeSlider').value;
+        }
+        
+        function playMusic(e)
+        {
+            player.play();
+        }
+        
+        function pauseMusic(e)
+        {
+            player.pause();
+        }
+        
+        function stopMusic(e)
+        {
+            player.pause();
+            player.currentTime= 0;
+        }
+    </script>
+</head>
+<body>
+    <audio id="player"></audio>
+    <button id="btnPlay">Play</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnStop">Stop</button><br/>
+    <input type="range" min="0" max="1" step=".01" id="volumeSlider" />
+</body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables in Javascript</title>
+    <script>
+       window.onload = function()
+       {
+           var age;         //Declared variable
+           age = 42;        //Initialized the variable
+           
+           var score = 1000;    //Declared and initialized integers
+           
+           alert("Your are " + age + " years old.");
+           alert("Score: " + score);
+           
+           var gpa = 3.05;  //Floating point
+           
+           alert("Your GPA is: " + gpa);
+           
+           var name = "Mark Lassoff";
+           
+           document.getElementById("output").innerHTML = "<h1>" + name + "</h1>";
+       }
+    </script>
+    </head>
+    <body>
+        <div id="output"></div>
+    </body>
+</html>

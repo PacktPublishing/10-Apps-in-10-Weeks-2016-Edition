@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Dates</title>
+
+<script>
+   window.onload = function()
+   {
+       var today = new Date();
+       document.getElementById('result').innerHTML = today.toDateString();
+       var dob = new Date("February 21, 1974 11:00:00");
+       //document.getElementById('result').innerHTML = dob;
+       var epoch = new Date(8970000000);
+       //document.getElementById('result').innerHTML = epoch;
+       
+   }
+</script>
+</head>
+<body>
+    <div id="result"></div>
+</body>

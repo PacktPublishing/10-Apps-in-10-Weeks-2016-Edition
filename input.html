@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input in Javascript</title>
+    <script>
+       window.onload = function()
+       {
+          var submitButton = document.getElementById("btnSubmit");         submitButton.addEventListener("click", greetUser);  
+          var age = prompt("How old are you?");
+          document.getElementById("output").innerHTML = "You are " + age + " years old."
+       }
+       
+       function greetUser()
+        {
+           var name = document.getElementById("name").value;
+           document.getElementById("output").innerHTML += "<h1>Howdy, " + name + "</h1>";
+        }
+    </script>
+    </head>
+    <body>
+        <label for= "name">Name:</label>
+        <input type="text" id="name" />
+        <button type="submit" id="btnSubmit">Submit</button>
+        <div id="output"></div>
+    </body>
+</html>

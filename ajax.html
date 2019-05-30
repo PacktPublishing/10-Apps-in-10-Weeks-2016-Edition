@@ -1,0 +1,40 @@
+<!DOCTYPE html5>
+<head>
+    <title>XMLHttpRequest</title>
+    <script>
+        var url="https://data.hartford.gov/resource/daux-ukcc.json";
+        var xmlhttp;
+        
+        window.onload=function()
+        {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = process;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+        
+        function process()
+        {
+            if(xmlhttp.readyState==4 && xmlhttp.status == 200)
+            {
+                //We have our data
+                var restaurantData = JSON.parse(xmlhttp.responseText);
+                //console.log(restaurantData[0].blms_dba);
+                var out="";
+                for(var x= 0; x < restaurantData.length; x++)
+                {
+                   out += "<p>" + restaurantData[x].blms_dba + "<br/>";
+                   out += restaurantData[x].blms_loc_street + "<br/>";
+                   out += restaurantData[x].bldt_lic_text2 + "</p>";
+                    
+                }
+                document.getElementById('result').innerHTML = out;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="result">
+    </div>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conditionals in Javascript</title>
+    <script>
+       window.onload = function()
+       {
+          var sideALength = 27;
+          var sideBLength = 14.5;
+           
+          var totalLength = sideALength + sideBLength;
+          var area = sideALength * sideBLength;
+          var diff = sideALength - sideBLength;
+          var average = totalLength / 2;
+           
+          var out = "";   
+          out += "Total Length:  " + totalLength;
+          out += "<br/>Area: " + area;
+          out += "<br/>Difference: " + diff;
+          out += "<br/>Average Length: " + average;
+          document.getElementById("output").innerHTML = out;
+          
+           //Modulus
+          result = 12 % 3; // 0
+          result = 12 % 4; // 1
+          
+       }
+    </script>
+    </head>
+    <body>
+        <div id="output"></div>
+    </body>
+</html>
